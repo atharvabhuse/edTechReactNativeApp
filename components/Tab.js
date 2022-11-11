@@ -7,59 +7,20 @@ import { ED_TECH_APP } from '../constants/constants';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import VideoList from './VideoList';
 import PDFDrawer from './PDFDrawer';
+import Profile from './Profile';
 
-const Tab = createMaterialBottomTabNavigator();
+const Tabs = createMaterialBottomTabNavigator();
 
-const Profile = ({ route, navigation }) => {
+const Tab = ({ route, navigation }) => {
 
     return (
         <View style={styles.main}>
 
-            <Text style={styles.navbar}>Welcome {data.personal_details.username}</Text>
-
-            <View style={styles.content}>
-
-                <View style={styles.headingRowMain}>
-
-                    <Text style={styles.heading1}>Activity</Text>
-                    <Text style={styles.heading2}>Today</Text>
-
-                </View>
-
-                <View style={styles.headingRow1}>
-
-                    <View style={styles.headingCol}>
-
-                        <Text style={styles.minHeading}>{ED_TECH_APP.MINUTES}</Text>
-                        <Text style={styles.minData}>{data.personal_details.today_data.minutes}/{data.personal_details.today_data.total_minutes}</Text>
-                        <Text style={styles.minHeading}>{ED_TECH_APP.QUESTIONS}</Text>
-                        <Text style={styles.questionData}>{data.personal_details.today_data.question_solved}/{data.personal_details.today_data.total_question_solved}</Text>
-
-                    </View>
-
-                    <View style={styles.headingCol}>
-
-                        <Text style={styles.minHeading}>{ED_TECH_APP.PERCENTAGE}</Text>
-                        <Text style={styles.percentage}>{data.personal_details.today_data.percentage}</Text>
-
-                    </View>
-
-                </View>
-
-                <View style={styles.headingRow}>
-                    {profileOptions.slice(0, 2).map((data, key) => { return (<Button style={styles.contentBtn} mode='contained'>{data}</Button>) })}
-                </View>
-                <View style={styles.headingRow}>
-                    {profileOptions.slice(2, 4).map((data, key) => { return (<Button style={styles.contentBtn} mode='contained'>{data}</Button>) })}
-                </View>
-                <View style={styles.headingRow}>
-                    {profileOptions.slice(4, 6).map((data, key) => { return (<Button style={styles.contentBtn} mode='contained'>{data}</Button>) })}
-                </View>
-                <View style={styles.headingRow}>
-                    {profileOptions.slice(6, 8).map((data, key) => { return (<Button style={styles.contentBtn} mode='contained'>{data}</Button>) })}
-                </View>
-
-            </View>
+            <Tabs.Navigator>
+                <Tabs.Screen name='profile' component={Profile} />
+                <Tabs.Screen name='video' component={VideoList} />
+                <Tabs.Screen name='pdf' component={PDFDrawer} />
+            </Tabs.Navigator>
 
         </View>
     );
@@ -190,4 +151,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Profile;
+export default Tab;

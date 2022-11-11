@@ -8,7 +8,7 @@ const ReactPDF = () => {
 
     <View>
 
-<Text style={styles.text1}>{reactPDF.map((data, key) => {
+      <Text style={styles.text1}>{reactPDF.map((data, key) => {
 
         return (<View style={styles.row}>
 

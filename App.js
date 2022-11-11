@@ -8,6 +8,7 @@ import { Provider as PaperProvider } from 'react-native-paper';
 import Profile from './components/Profile';
 import PDFDrawer from './components/PDFDrawer';
 import VideoList from './components/VideoList';
+import Tab from './components/Tab';
 
 export default function App() {
 
@@ -23,9 +24,7 @@ export default function App() {
 
           <Stack.Screen name="welcome" component={Welcome} />
           <Stack.Screen name="login" component={Login} />
-          <Stack.Screen name= "profile" component={Profile} />
-          <Stack.Screen name='pdf' component={PDFDrawer} />
-          <Stack.Screen name='video' component={VideoList} />
+          <Stack.Screen name="Tab" component={Tab} />
 
         </Stack.Navigator>
 
@@ -34,3 +33,4 @@ export default function App() {
     </NavigationContainer>
   )
 };
+

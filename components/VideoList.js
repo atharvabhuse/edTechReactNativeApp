@@ -33,14 +33,6 @@ const VideoList = ({ navigation }) => {
 
             </ScrollView>
 
-            <View style={styles.footer}>
-
-                <Icon.Button style={styles.btn} mode='contained' name='user' size={20} color="white" onPress={pressHandler}>{ED_TECH_APP.BUTTONS.PROFILE}</Icon.Button>
-                <Icon.Button style={styles.btn1} mode='contained' name='play' size={20} color="white">{ED_TECH_APP.BUTTONS.VIDEOS}</Icon.Button>
-                <Icon.Button style={styles.btn} mode='contained' name='file' size={20} color="white">{ED_TECH_APP.BUTTONS.PDF}</Icon.Button>
-
-            </View>
-
         </View>
     );
 };

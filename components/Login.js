@@ -28,14 +28,13 @@ const Login = ({ navigation }) => {
 
     if (username == data.personal_details.username && password == data.personal_details.password) {
 
-      navigation.navigate('profile', { name: `${username}` });
+      navigation.navigate('Tab');
 
-    } 
-    else
-    {
+    }
+    else {
 
       Alert.alert("Please enter valid username and password");
-    
+
     };
 
   };
@@ -67,7 +66,7 @@ const Login = ({ navigation }) => {
       </View>
 
     </View>
-    
+
   );
 };
 
